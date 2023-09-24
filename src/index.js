@@ -8,9 +8,25 @@ async function getWeatherData() {
   return weatherData;
 }
 
+function processWeatherData(weatherData) {
+  console.log(weatherData);
+
+  let processedWeatherData = {
+    city: weatherData.location.name,
+    country: weatherData.location.country,
+    localTime: weatherData.location.localtime,
+    condition: weatherData.current.condition.text,
+    humidity: weatherData.current.humidity,
+    windMPH: weatherData.current.gust_mph,
+    windKPH: weatherData.current.gust_kph,
+    chanceOfRain: weatherData.current.precip_in
+  }
+  console.log(processedWeatherData)
+}
+
 getWeatherData()
   .then(weatherData => {
-    console.log(weatherData);
+    processWeatherData(weatherData);
   })
   .catch(error => {
     console.log(error);
