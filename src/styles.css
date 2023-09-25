@@ -135,3 +135,26 @@ svg {
 #searchQuerySubmit:hover {
   cursor: pointer;
 }
+
+/* Styling for scrollbars */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  background: #785095;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(71, 0, 153, 0.5);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(71, 0, 153, 0.9)
+}
