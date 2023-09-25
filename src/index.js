@@ -1,11 +1,19 @@
 import "./styles.css";
 
-let url = 'https://api.weatherapi.com/v1/current.json?key=f565f05ebecc44d0b0d25131232309&q=garden-grove'
+let url = 'https://api.weatherapi.com/v1/current.json?key=f565f05ebecc44d0b0d25131232309&q=gardengrove';
 
 async function getWeatherData() {
-  const weatherDataResponse = await fetch(url, {mode: 'cors'});
-  const weatherData = await weatherDataResponse.json();
-  return weatherData;
+  try {
+    const weatherDataResponse = await fetch(url, { mode: 'cors' });
+    if (!weatherDataResponse.ok) {
+      throw new Error(`${weatherDataResponse.status}`);
+    }
+    const weatherData = await weatherDataResponse.json();
+    return weatherData;
+  } catch (err) {
+    console.error(err);
+    throw err; // Rethrow the error to indicate that something went wrong
+  }
 }
 
 function processWeatherData(weatherData) {
@@ -26,8 +34,13 @@ function processWeatherData(weatherData) {
 
 getWeatherData()
   .then(weatherData => {
-    processWeatherData(weatherData);
+    // Check if there was an error in getWeatherData
+    if (weatherData instanceof Error) {
+      console.log("An error occurred in getWeatherData:", weatherData);
+    } else {
+      processWeatherData(weatherData);
+    }
   })
   .catch(error => {
-    console.log(error);
-  })
+    console.log("An error occurred:", error);
+  });
