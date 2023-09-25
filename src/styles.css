@@ -24,7 +24,7 @@ body {
   background-position: center 100%;
   background-attachment: fixed;
   padding: 30px 30px 0 30px;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 /* Styling for top half */
@@ -32,6 +32,7 @@ body {
   height: 65%;
 }
 
+/* Styling for navbar and navitems */
 nav {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -81,6 +82,29 @@ nav div div {
 
 .navbuttons button.active {
   border: 2px solid white;
+}
+
+/* Styling for top-half weather info */
+.location-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  gap: 5px;
+}
+
+.location-info .container {
+  display: flex;
+  gap: 15px;
+}
+
+.city, .country {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.localTime {
+  font-size: 23px;
 }
 
 /* Styling for bottom half */
