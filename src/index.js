@@ -3,7 +3,7 @@ import "./styles.css";
 let currentLocation = 'tampa';
 let currentURL = `https://api.weatherapi.com/v1/current.json?key=f565f05ebecc44d0b0d25131232309&q=${currentLocation}`;
 
-async function getWeatherData() {
+async function getCurrentWeatherData() {
   try {
     const weatherDataResponse = await fetch(currentURL, { mode: 'cors' });
     if (!weatherDataResponse.ok) {
@@ -17,7 +17,7 @@ async function getWeatherData() {
   }
 }
 
-function processWeatherData(weatherData) {
+function processCurrentWeatherData(weatherData) {
   console.log(weatherData);
 
   let processedWeatherData = {
@@ -35,13 +35,13 @@ function processWeatherData(weatherData) {
   console.log(processedWeatherData)
 }
 
-getWeatherData()
+getCurrentWeatherData()
   .then(weatherData => {
     // Check if there was an error in getWeatherData
     if (weatherData instanceof Error) {
       console.log("An error occurred in getWeatherData:", weatherData);
     } else {
-      processWeatherData(weatherData);
+      processCurrentWeatherData(weatherData);
     }
   })
   .catch(error => {
