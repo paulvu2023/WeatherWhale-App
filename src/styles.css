@@ -26,6 +26,7 @@ body {
   padding: 30px;
 }
 
+/* Styling for top half */
 .top {
   height: 65%;
 }
@@ -50,6 +51,16 @@ nav div {
   align-items: center;
 }
 
+.navbuttons {
+  display: flex;
+  gap: 10px;
+}
+
+nav div button {
+  border: none;
+}
+
+/* Styling for bottom half */
 .bottom {
   height: 35%;
 }
@@ -71,10 +82,15 @@ nav div {
   color: white;
   font-weight: 800;
   outline: none;
-  border: none;
+  border: 2px solid rgb(61, 1, 129);
   border-radius: 1.625rem;
   padding: 0 3rem 0 1rem;
   font-size: 1.1rem;
+  transition: border 0.3s ease-in-out;
+}
+
+#searchQueryInput:focus {
+  border: 2px solid white;
 }
 
 ::placeholder {
