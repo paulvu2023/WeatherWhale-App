@@ -22,3 +22,11 @@ body {
   background-position: center 100%;
   background-attachment: fixed;
 }
+
+.top {
+  height: 65%;
+}
+
+.bottom {
+  height: 35%;
+}
