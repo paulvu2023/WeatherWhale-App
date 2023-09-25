@@ -1,4 +1,4 @@
-import "./styles.css";
+import './styles.css';
 
 let currentLocation = 'garden-grove';
 let currentURL = `https://api.weatherapi.com/v1/current.json?key=f565f05ebecc44d0b0d25131232309&q=${currentLocation}`;
@@ -19,7 +19,6 @@ async function getCurrentWeatherData() {
 }
 
 function processCurrentWeatherData(weatherData) {
-  console.log(weatherData)
   let processedCurrentData = {
     city: weatherData.location.name,
     country: weatherData.location.country,
@@ -30,8 +29,8 @@ function processCurrentWeatherData(weatherData) {
     humidity: weatherData.current.humidity,
     windMPH: weatherData.current.wind_mph,
     windKPH: weatherData.current.wind_kph,
-  }
-  console.log(processedCurrentData)
+  };
+  console.log(processedCurrentData);
 }
 
 async function getForecastWeatherData() {
@@ -49,37 +48,37 @@ async function getForecastWeatherData() {
 }
 
 function processForecastWeatherData(weatherData) {
-  console.log(weatherData)
   let processedForecastData = {
-    dailyChanceOfrain: weatherData.forecast.forecastday[0].day.daily_chance_of_rain,
+    dailyChanceOfrain:
+      weatherData.forecast.forecastday[0].day.daily_chance_of_rain,
     dailyHighestTempC: weatherData.forecast.forecastday[0].day.maxtemp_c,
     dailyHighestTempF: weatherData.forecast.forecastday[0].day.maxtemp_f,
     dailyLowestTempC: weatherData.forecast.forecastday[0].day.mintemp_c,
     dailyLowestTempF: weatherData.forecast.forecastday[0].day.mintemp_f,
-  }
+  };
   console.log(processedForecastData);
 }
 
 getCurrentWeatherData()
-  .then(weatherData => {
+  .then((weatherData) => {
     if (weatherData instanceof Error) {
-      console.log("An error occurred in getCurrentWeatherData:", weatherData);
+      console.log('An error occurred in getCurrentWeatherData:', weatherData);
     } else {
       processCurrentWeatherData(weatherData);
     }
   })
-  .catch(error => {
-    console.log("An error occurred:", error);
+  .catch((error) => {
+    console.log('An error occurred:', error);
   });
 
 getForecastWeatherData()
-  .then(weatherData => {
+  .then((weatherData) => {
     if (weatherData instanceof Error) {
-      console.log("An error occurred in getForecastWeatherData:", weatherData);
+      console.log('An error occurred in getForecastWeatherData:', weatherData);
     } else {
       processForecastWeatherData(weatherData);
     }
   })
-  .catch(error => {
-    console.log("An error occurred:", error);
+  .catch((error) => {
+    console.log('An error occurred:', error);
   });
