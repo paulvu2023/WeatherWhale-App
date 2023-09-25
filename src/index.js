@@ -19,6 +19,7 @@ async function getCurrentWeatherData() {
 }
 
 function processCurrentWeatherData(weatherData) {
+  console.log(weatherData)
   let processedCurrentData = {
     city: weatherData.location.name,
     country: weatherData.location.country,
@@ -27,8 +28,8 @@ function processCurrentWeatherData(weatherData) {
     tempF: weatherData.current.temp_f,
     condition: weatherData.current.condition.text,
     humidity: weatherData.current.humidity,
-    windMPH: weatherData.current.gust_mph,
-    windKPH: weatherData.current.gust_kph,
+    windMPH: weatherData.current.wind_mph,
+    windKPH: weatherData.current.wind_kph,
   }
   console.log(processedCurrentData)
 }
@@ -48,6 +49,7 @@ async function getForecastWeatherData() {
 }
 
 function processForecastWeatherData(weatherData) {
+  console.log(weatherData)
   let processedForecastData = {
     dailyChanceOfrain: weatherData.forecast.forecastday[0].day.daily_chance_of_rain,
     dailyHighestTempC: weatherData.forecast.forecastday[0].day.maxtemp_c,
