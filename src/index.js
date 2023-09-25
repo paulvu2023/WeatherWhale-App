@@ -2,6 +2,7 @@ import "./styles.css";
 
 let currentLocation = 'tampa';
 let currentURL = `https://api.weatherapi.com/v1/current.json?key=f565f05ebecc44d0b0d25131232309&q=${currentLocation}`;
+let forecastURL = `http://api.weatherapi.com/v1/forecast.json?key=f565f05ebecc44d0b0d25131232309&q=${currentLocation}`;
 
 async function getCurrentWeatherData() {
   try {
@@ -13,13 +14,11 @@ async function getCurrentWeatherData() {
     return weatherData;
   } catch (err) {
     console.error(err);
-    throw err; // Rethrow the error to indicate that something went wrong
+    throw err;
   }
 }
 
 function processCurrentWeatherData(weatherData) {
-  console.log(weatherData);
-
   let processedWeatherData = {
     city: weatherData.location.name,
     country: weatherData.location.country,
@@ -30,9 +29,22 @@ function processCurrentWeatherData(weatherData) {
     humidity: weatherData.current.humidity,
     windMPH: weatherData.current.gust_mph,
     windKPH: weatherData.current.gust_kph,
-    chanceOfRain: weatherData.current.precip_in
   }
   console.log(processedWeatherData)
+}
+
+async function getForecastWeatherData() {
+  try {
+    const weatherDataResponse = await fetch(forecastURL, { mode: 'cors' });
+    if (!weatherDataResponse.ok) {
+      throw new Error(`${weatherDataResponse.status}`);
+    }
+    const weatherData = await weatherDataResponse.json();
+    return weatherData;
+  } catch (err) {
+    console.error(err);
+    throw err; // Rethrow the error to indicate that something went wrong
+  }
 }
 
 getCurrentWeatherData()
