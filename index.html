@@ -17,6 +17,7 @@
         <img src="../src/images/whale.png" alt="WeatherWhale Logo">
         <div>WeatherWhale</div>
       </div>
+
       <div class="searchBar">
         <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Enter Location" value="" />
         <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
@@ -24,6 +25,7 @@
           </svg>
         </button>
       </div>
+
       <div class='navbuttons'>
         <button class="fahrenheitButton">°F, mph</button>
         <button class="celsius">℃, m/s</button>
@@ -31,22 +33,31 @@
     </nav>
 
     <div class="location-info">
-      <div class="container">
+      <div class="location">
         <div class="city">Garden Grove</div>
         <div class="country">United States of America</div>
       </div>
       <div class="localTime">2023-09-25 15:58</div>
     </div>
     
-    <div class="condition">Partly cloudy</div>
-    <div class="humidity">65</div> 
-    <div class="tempF">73.9</div>
-    <div class="windMPH">9.4</div>
+    <div class="container">
+      <div class="left">
+        <div class="humidity">Humidity 65</div> 
+        <div class="windMPH">WindMPH 9.4</div>
+        <div class="uv">UV Index 5</div>
+      </div>
 
-    <div class="dailyChanceOfRain">0</div>
-    <div class="dailyHighestTempF">75.8</div>
-    <div class="dailyLowestTempF">59.9</div>
-  </div>
+      <div class="middle">
+        <div class="condition">Partly cloudy</div>
+        <div class="tempF">TempF 73.9</div>
+      </div>
+
+      <div class="right">
+        <div class="dailyChanceOfRain">Chance of Rain 0</div>
+        <div class="dailyHighestTempF">Daily HighF 75.8</div>
+        <div class="dailyLowestTempF">Daily LowF 59.9</div>
+      </div>
+    </div>
 
   <div class="bottom"></div>
 </body>
