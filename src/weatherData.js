@@ -2,6 +2,11 @@ let currentLocation = 'Huntington-Beach';
 let currentURL = `https://api.weatherapi.com/v1/current.json?key=f565f05ebecc44d0b0d25131232309&q=${currentLocation}`;
 let forecastURL = `http://api.weatherapi.com/v1/forecast.json?key=f565f05ebecc44d0b0d25131232309&q=${currentLocation}`;
 
+function isFahrenheitActive() {
+  const fahrenheitButton = document.querySelector('.fahrenheitButton');
+  return fahrenheitButton.classList.contains('active');
+}
+
 async function getCurrentWeatherData() {
   try {
     const weatherDataResponse = await fetch(currentURL, { mode: 'cors' });
