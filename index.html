@@ -43,26 +43,63 @@
     
     <div class="container">
       <div class="left">
-        <div class="humidity">Humidity 65</div> 
-        <div class="wind"></div>
-        <div class="uv">UV Index 5</div>
+        <div class="humidity tempItem">
+          <i class="fa-solid fa-droplet tempIcon"></i>
+          <div>
+            Humidity
+            <span></span>
+          </div>
+        </div>
+
+        <div class="wind tempItem">
+          <i class="fa-solid fa-wind tempIcon"></i>
+          <div>
+            Wind
+            <span></span>
+          </div>
+        </div>
+
+        <div class="uv tempItem">
+          <i class="fa-regular fa-sun tempIcon"></i>
+          <div>
+            UV Index
+            <span></span>
+          </div>
+        </div>
       </div>
 
       <div class="middle">
-        <div class="condition">
-          
-          <span></span>
+        <div class="condition-container">
+          <div class="condition-icon-div"></div>
+          <div class="temperature"></div>
         </div>
-        <div class="temperature"></div>
+        <div class="condition"></div>
       </div>
 
       <div class="right">
-        <i class="fa-solid fa-cloud-rain"></i>
-        <div class="dailyChanceOfRain">Chance of Rain 0</div>
-        <div class="dailyHighestTemp">Daily HighF 75.8</div>
-        <div class="dailyLowestTemp">Daily LowF 59.9</div>
-      </div>
-    </div>
+        <div class="dailyChanceOfRain tempItem">
+          <i class="fa-solid fa-cloud-rain tempIcon"></i>
+          <div>
+            Chance of Rain
+            <span></span>
+          </div>
+        </div>
+
+        <div class="dailyHighestTemp tempItem">
+          <i class="fa-solid fa-temperature-arrow-up tempIcon"></i>
+          <div>
+            Daily High
+            <span></span>
+          </div>
+        </div>
+
+        <div class="dailyLowestTemp tempItem">
+          <i class="fa-solid fa-temperature-arrow-down tempIcon"></i>
+          <div>
+            Daily Low
+            <span></span>
+          </div>
+        </div
 
   <div class="bottom"></div>
 </body>
