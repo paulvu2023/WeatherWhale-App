@@ -109,15 +109,59 @@ nav div div {
 
 /* Styling for the main content on the top half */
 .container {
-  padding: 40px;
+  padding-top: 40px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.left, .right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tempItem {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.tempIcon {
+  font-size: 30px;
+}
+
+.tempItem div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 800;
+}
+
+.tempItem span {
+  font-size: 25px;
+  font-weight: 800;
 }
 
 /* Styling for bottom half */
 .bottom {
   height: 35%;
 }
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.condition-container {
+  display: flex;
+  align-items: center;
+}
+
+.condition-icon {
+  width: 100px;
+}
+
 
 /* Searchbar Styling */
 .searchBar {
