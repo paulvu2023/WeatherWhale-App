@@ -72,4 +72,5 @@ export {
   processCurrentWeatherData,
   getForecastWeatherData,
   processForecastWeatherData,
+  isFahrenheitActive,
 };
