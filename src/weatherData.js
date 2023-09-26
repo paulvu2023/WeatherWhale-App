@@ -1,3 +1,5 @@
+import { displayCurrentWeatherData } from './display';
+
 let currentLocation = 'Huntington-Beach';
 let currentURL = `https://api.weatherapi.com/v1/current.json?key=f565f05ebecc44d0b0d25131232309&q=${currentLocation}`;
 let forecastURL = `http://api.weatherapi.com/v1/forecast.json?key=f565f05ebecc44d0b0d25131232309&q=${currentLocation}`;
@@ -5,6 +7,33 @@ let forecastURL = `http://api.weatherapi.com/v1/forecast.json?key=f565f05ebecc44
 function isFahrenheitActive() {
   const fahrenheitButton = document.querySelector('.fahrenheitButton');
   return fahrenheitButton.classList.contains('active');
+}
+
+async function handleCurrentWeatherData() {
+  try {
+    const weatherData = await getCurrentWeatherData();
+    if (weatherData instanceof Error) {
+      console.log('An error occurred in getCurrentWeatherData:', weatherData);
+    } else {
+      const currentWeatherData = processCurrentWeatherData(weatherData);
+      displayCurrentWeatherData(currentWeatherData, isFahrenheitActive());
+    }
+  } catch (error) {
+    console.log('An error occurred:', error);
+  }
+}
+
+async function handleForecastWeatherData() {
+  try {
+    const weatherData = await getForecastWeatherData();
+    if (weatherData instanceof Error) {
+      console.log('An error occurred in getForecastWeatherData:', weatherData);
+    } else {
+      processForecastWeatherData(weatherData);
+    }
+  } catch (error) {
+    console.log('An error occurred:', error);
+  }
 }
 
 async function getCurrentWeatherData() {
@@ -73,4 +102,6 @@ export {
   getForecastWeatherData,
   processForecastWeatherData,
   isFahrenheitActive,
+  handleCurrentWeatherData,
+  handleForecastWeatherData,
 };
