@@ -15,15 +15,15 @@ function displayCurrentWeatherData(processedCurrentData, isFahrenheitActive) {
   humidity.textContent = `${processedCurrentData.humidity} %`;
 
   if (isFahrenheitActive) {
-    temperature.textContent = processedCurrentData.tempF;
+    temperature.textContent = `${processedCurrentData.tempF} °F`;
     wind.textContent = `${processedCurrentData.windMPH} mph`;
   } else {
-    temperature.textContent = processedCurrentData.tempC;
-    wind.textContent = processedCurrentData.windKPH;
+    temperature.textContent = `${processedCurrentData.tempC} °C`;
+    wind.textContent = `${processedCurrentData.windKPH} kph`;
   }
 
   if (!getConditionIcon(processedCurrentData.condition)) {
-    conditionIcon.innerHTML = `<img class='condition-icon conditionIconColor' src='${processedCurrentData.conditionIcon}'>`;
+    conditionIcon.innerHTML = `<img class='condition-icon' src='${processedCurrentData.conditionIcon}'>`;
   } else {
     conditionIcon.innerHTML = getConditionIcon(processedCurrentData.condition);
   }
@@ -42,15 +42,15 @@ function getConditionIcon(condition) {
   } else if (condition.includes('rain') || condition.includes('drizzle')) {
     return '<i class="fa-solid fa-cloud-rain condition-icon" style="color: lightblue;"></i>';
   } else if (condition.includes('snow')) {
-    return '<i class="fa-solid fa-snowflake" style="color: lightblue;"></i>';
+    return '<i class="fa-solid fa-snowflake condition-icon" style="color: lightblue;"></i>';
   } else if (condition.includes('sleet')) {
-    return '<i class="fa-solid fa-icicles" style="color: lightblue;"></i>';
+    return '<i class="fa-solid fa-icicles condition-icon" style="color: lightblue;"></i>';
   } else if (condition.includes('thunder')) {
-    return '<i class="fa-solid fa-cloud-bolt" style="color: yellow;"></i>';
+    return '<i class="fa-solid fa-cloud-bolt condition-icon" style="color: yellow;"></i>';
   } else if (condition.includes('blowing snow') || condition === 'blizzard') {
-    return '<i class="fa-solid fa-cloud-showers-heavy" style="color: lightblue;"></i>';
+    return '<i class="fa-solid fa-cloud-showers-heavy condition-icon" style="color: lightblue;"></i>';
   } else if (condition.includes('ice pellets')) {
-    return '<i class="fa-solid fa-icicles" style="color: lightblue;"></i>';
+    return '<i class="fa-solid fa-icicles condition-icon" style="color: lightblue;"></i>';
   } else {
     return false;
   }
