@@ -22,10 +22,37 @@ function displayCurrentWeatherData(processedCurrentData, isFahrenheitActive) {
     wind.textContent = processedCurrentData.windKPH;
   }
 
-  if (!getConditionIcon()) {
+  if (!getConditionIcon(processedCurrentData.condition)) {
     conditionIcon.innerHTML = `<img class='condition-icon conditionIconColor' src='${processedCurrentData.conditionIcon}'>`;
   } else {
-    conditionIcon.innerHTML = getConditionIcon();
+    conditionIcon.innerHTML = getConditionIcon(processedCurrentData.condition);
+  }
+}
+
+//Returns condition icon if found, otherwise returns false
+function getConditionIcon(condition) {
+  condition = condition.toLowerCase();
+
+  if (condition === 'sunny') {
+    return '<i class="fa-solid fa-sun condition-icon" style="color: yellow"></i>';
+  } else if (condition === 'clear') {
+    return '<i class="fa-solid fa-moon condition-icon" style="color: yellow;"></i>';
+  } else if (condition.includes('cloud') || condition === 'mist') {
+    return '<i class="fa-solid fa-cloud condition-icon" style="color: lightblue;"></i>';
+  } else if (condition.includes('rain') || condition.includes('drizzle')) {
+    return '<i class="fa-solid fa-cloud-rain condition-icon" style="color: lightblue;"></i>';
+  } else if (condition.includes('snow')) {
+    return '<i class="fa-solid fa-snowflake" style="color: lightblue;"></i>';
+  } else if (condition.includes('sleet')) {
+    return '<i class="fa-solid fa-icicles" style="color: lightblue;"></i>';
+  } else if (condition.includes('thunder')) {
+    return '<i class="fa-solid fa-cloud-bolt" style="color: yellow;"></i>';
+  } else if (condition.includes('blowing snow') || condition === 'blizzard') {
+    return '<i class="fa-solid fa-cloud-showers-heavy" style="color: lightblue;"></i>';
+  } else if (condition.includes('ice pellets')) {
+    return '<i class="fa-solid fa-icicles" style="color: lightblue;"></i>';
+  } else {
+    return false;
   }
 }
 
