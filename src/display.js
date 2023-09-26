@@ -19,6 +19,8 @@ function displayCurrentWeatherData(processedCurrentData, isFahrenheitActive) {
     temperature.textContent = processedCurrentData.tempC;
     wind.textContent = processedCurrentData.windKPH;
   }
+
+  //add styling and spans
 }
 
 export { displayCurrentWeatherData };
