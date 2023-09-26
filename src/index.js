@@ -8,6 +8,7 @@ import {
 } from './weatherData';
 
 const locationForm = document.querySelector('form.searchBar');
+const temperatureButtons = document.querySelectorAll('.navbuttons button');
 
 getCurrentWeatherData()
   .then((weatherData) => {
@@ -38,4 +39,11 @@ locationForm.addEventListener('submit', (event) => {
   event.preventDefault();
   currentLocation = searchQuery.value.trim().replace(' ', '-');
   searchQuery.value = '';
+});
+
+temperatureButtons.forEach((temperatureButton) => {
+  temperatureButton.addEventListener('click', () => {
+    document.querySelector('.active').classList.remove('active');
+    temperatureButton.classList.add('active');
+  });
 });
