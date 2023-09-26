@@ -1,4 +1,4 @@
-let currentLocation = 'garden-grove';
+let currentLocation = 'Huntington-Beach';
 let currentURL = `https://api.weatherapi.com/v1/current.json?key=f565f05ebecc44d0b0d25131232309&q=${currentLocation}`;
 let forecastURL = `http://api.weatherapi.com/v1/forecast.json?key=f565f05ebecc44d0b0d25131232309&q=${currentLocation}`;
 
@@ -30,6 +30,7 @@ function processCurrentWeatherData(weatherData) {
     windKPH: weatherData.current.wind_kph,
   };
   console.log(processedCurrentData);
+  return processedCurrentData;
 }
 
 async function getForecastWeatherData() {
@@ -57,9 +58,11 @@ function processForecastWeatherData(weatherData) {
     uv: weatherData.forecast.forecastday[0].day.uv,
   };
   console.log(processedForecastData);
+  return processedForecastData;
 }
 
 export {
+  currentLocation,
   getCurrentWeatherData,
   processCurrentWeatherData,
   getForecastWeatherData,
