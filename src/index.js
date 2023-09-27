@@ -22,6 +22,8 @@ temperatureButtons.forEach((temperatureButton) => {
   temperatureButton.addEventListener('click', () => {
     document.querySelector('.active').classList.remove('active');
     temperatureButton.classList.add('active');
+    handleCurrentWeatherData();
+    handleForecastWeatherData();
   });
 });
 
