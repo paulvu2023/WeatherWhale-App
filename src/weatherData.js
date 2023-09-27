@@ -20,6 +20,7 @@ function isFahrenheitActive() {
 
 async function handleCurrentWeatherData() {
   try {
+    document.querySelector('.error').textContent = '';
     const weatherData = await getCurrentWeatherData();
     if (weatherData instanceof Error) {
       console.log('An error occurred in getCurrentWeatherData:', weatherData);
@@ -29,11 +30,13 @@ async function handleCurrentWeatherData() {
     }
   } catch (error) {
     console.log('An error occurred:', error);
+    document.querySelector('.error').textContent = 'Location not found.';
   }
 }
 
 async function handleForecastWeatherData() {
   try {
+    document.querySelector('.error').textContent = '';
     const weatherData = await getForecastWeatherData();
     if (weatherData instanceof Error) {
       console.log('An error occurred in getForecastWeatherData:', weatherData);
@@ -43,6 +46,7 @@ async function handleForecastWeatherData() {
     }
   } catch (error) {
     console.log('An error occurred:', error);
+    document.querySelector('.error').textContent = 'Location not found.';
   }
 }
 

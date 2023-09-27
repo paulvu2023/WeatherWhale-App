@@ -89,8 +89,13 @@ nav div div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
   gap: 5px;
+}
+
+.error {
+  height: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
 }
 
 .location {
