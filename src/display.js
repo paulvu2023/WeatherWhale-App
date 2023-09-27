@@ -1,3 +1,21 @@
+function displayForecastWeatherData(processedForecastData, isFahrenheitActive) {
+  const uv = document.querySelector('.uv span');
+  const dailyChanceOfRain = document.querySelector('.dailyChanceOfRain span');
+  const dailyHigh = document.querySelector('.dailyHigh span');
+  const dailyLow = document.querySelector('.dailyLow span');
+
+  uv.textContent = `${processedForecastData.uv}`;
+  dailyChanceOfRain.textContent = `${processedForecastData.dailyChanceOfRain} %`;
+
+  if (!isFahrenheitActive) {
+    dailyHigh.textContent = `${processedForecastData.dailyHighestTempC} °C`;
+    dailyLow.textContent = `${processedForecastData.dailyLowestTempC} °C`;
+  } else {
+    dailyHigh.textContent = `${processedForecastData.dailyHighestTempF} °F`;
+    dailyLow.textContent = `${processedForecastData.dailyLowestTempF} °F`;
+  }
+}
+
 function displayCurrentWeatherData(processedCurrentData, isFahrenheitActive) {
   const city = document.querySelector('.city');
   const country = document.querySelector('.country');
@@ -34,26 +52,26 @@ function getConditionIcon(condition) {
   condition = condition.toLowerCase();
 
   if (condition === 'sunny') {
-    return '<i class="fa-solid fa-sun condition-icon" style="color: yellow"></i>';
+    return '<i class="fa-regular fa-sun condition-icon"></i></i>';
   } else if (condition === 'clear') {
-    return '<i class="fa-solid fa-moon condition-icon" style="color: yellow;"></i>';
+    return '<i class="fa-solid fa-moon condition-icon"></i>';
   } else if (condition.includes('cloud') || condition === 'mist') {
-    return '<i class="fa-solid fa-cloud condition-icon" style="color: lightblue;"></i>';
+    return '<i class="fa-solid fa-cloud condition-icon"></i>';
   } else if (condition.includes('rain') || condition.includes('drizzle')) {
-    return '<i class="fa-solid fa-cloud-rain condition-icon" style="color: lightblue;"></i>';
+    return '<i class="fa-solid fa-cloud-rain condition-icon"></i>';
   } else if (condition.includes('snow')) {
-    return '<i class="fa-solid fa-snowflake condition-icon" style="color: lightblue;"></i>';
+    return '<i class="fa-solid fa-snowflake condition-icon"></i>';
   } else if (condition.includes('sleet')) {
-    return '<i class="fa-solid fa-icicles condition-icon" style="color: lightblue;"></i>';
+    return '<i class="fa-solid fa-icicles condition-icon"></i>';
   } else if (condition.includes('thunder')) {
-    return '<i class="fa-solid fa-cloud-bolt condition-icon" style="color: yellow;"></i>';
+    return '<i class="fa-solid fa-cloud-bolt condition-icon"></i>';
   } else if (condition.includes('blowing snow') || condition === 'blizzard') {
-    return '<i class="fa-solid fa-cloud-showers-heavy condition-icon" style="color: lightblue;"></i>';
+    return '<i class="fa-solid fa-cloud-showers-heavy condition-icon"></i>';
   } else if (condition.includes('ice pellets')) {
-    return '<i class="fa-solid fa-icicles condition-icon" style="color: lightblue;"></i>';
+    return '<i class="fa-solid fa-icicles condition-icon"></i>';
   } else {
     return false;
   }
 }
 
-export { displayCurrentWeatherData };
+export { displayCurrentWeatherData, displayForecastWeatherData };

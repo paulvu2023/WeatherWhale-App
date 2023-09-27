@@ -1,4 +1,7 @@
-import { displayCurrentWeatherData } from './display';
+import {
+  displayCurrentWeatherData,
+  displayForecastWeatherData,
+} from './display';
 
 let currentLocation = 'Huntington-Beach';
 let currentURL = `https://api.weatherapi.com/v1/current.json?key=f565f05ebecc44d0b0d25131232309&q=${currentLocation}`;
@@ -29,7 +32,8 @@ async function handleForecastWeatherData() {
     if (weatherData instanceof Error) {
       console.log('An error occurred in getForecastWeatherData:', weatherData);
     } else {
-      processForecastWeatherData(weatherData);
+      const currentWeatherData = processForecastWeatherData(weatherData);
+      displayForecastWeatherData(currentWeatherData, isFahrenheitActive());
     }
   } catch (error) {
     console.log('An error occurred:', error);
@@ -83,7 +87,7 @@ async function getForecastWeatherData() {
 
 function processForecastWeatherData(weatherData) {
   let processedForecastData = {
-    dailyChanceOfrain:
+    dailyChanceOfRain:
       weatherData.forecast.forecastday[0].day.daily_chance_of_rain,
     dailyHighestTempC: weatherData.forecast.forecastday[0].day.maxtemp_c,
     dailyHighestTempF: weatherData.forecast.forecastday[0].day.maxtemp_f,
