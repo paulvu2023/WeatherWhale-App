@@ -7,6 +7,12 @@ let currentLocation = 'Huntington-Beach';
 let currentURL = `https://api.weatherapi.com/v1/current.json?key=f565f05ebecc44d0b0d25131232309&q=${currentLocation}`;
 let forecastURL = `http://api.weatherapi.com/v1/forecast.json?key=f565f05ebecc44d0b0d25131232309&q=${currentLocation}`;
 
+function changeLocation(newLocation) {
+  currentLocation = newLocation;
+  currentURL = `https://api.weatherapi.com/v1/current.json?key=f565f05ebecc44d0b0d25131232309&q=${newLocation}`;
+  forecastURL = `http://api.weatherapi.com/v1/forecast.json?key=f565f05ebecc44d0b0d25131232309&q=${newLocation}`;
+}
+
 function isFahrenheitActive() {
   const fahrenheitButton = document.querySelector('.fahrenheitButton');
   return fahrenheitButton.classList.contains('active');
@@ -108,4 +114,5 @@ export {
   isFahrenheitActive,
   handleCurrentWeatherData,
   handleForecastWeatherData,
+  changeLocation,
 };

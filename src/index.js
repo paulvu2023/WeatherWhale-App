@@ -1,8 +1,8 @@
 import './styles.css';
 import {
-  currentLocation,
   handleCurrentWeatherData,
   handleForecastWeatherData,
+  changeLocation,
 } from './weatherData';
 
 const locationForm = document.querySelector('form.searchBar');
@@ -11,7 +11,10 @@ const temperatureButtons = document.querySelectorAll('.navbuttons button');
 locationForm.addEventListener('submit', (event) => {
   const searchQuery = document.getElementById('searchQueryInput');
   event.preventDefault();
-  currentLocation = searchQuery.value.trim().replace(' ', '-');
+  const newLocation = searchQuery.value.trim().replace(' ', '-');
+  changeLocation(newLocation);
+  handleCurrentWeatherData();
+  handleForecastWeatherData();
   searchQuery.value = '';
 });
 
