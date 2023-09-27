@@ -27,3 +27,8 @@ temperatureButtons.forEach((temperatureButton) => {
 
 handleCurrentWeatherData();
 handleForecastWeatherData();
+
+setInterval(function () {
+  handleCurrentWeatherData();
+  handleForecastWeatherData();
+}, 5000);
