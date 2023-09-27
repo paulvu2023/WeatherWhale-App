@@ -55,7 +55,11 @@ function getConditionIcon(condition) {
     return '<i class="fa-regular fa-sun condition-icon"></i></i>';
   } else if (condition === 'clear') {
     return '<i class="fa-solid fa-moon condition-icon"></i>';
-  } else if (condition.includes('cloud') || condition === 'mist') {
+  } else if (
+    condition.includes('cloud') ||
+    condition === 'mist' ||
+    condition === 'overcast'
+  ) {
     return '<i class="fa-solid fa-cloud condition-icon"></i>';
   } else if (condition.includes('rain') || condition.includes('drizzle')) {
     return '<i class="fa-solid fa-cloud-rain condition-icon"></i>';
