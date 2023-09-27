@@ -5,7 +5,7 @@ import {
 
 let currentLocation = 'Huntington-Beach';
 let currentURL = `https://api.weatherapi.com/v1/current.json?key=f565f05ebecc44d0b0d25131232309&q=${currentLocation}`;
-let forecastURL = `http://api.weatherapi.com/v1/forecast.json?key=f565f05ebecc44d0b0d25131232309&q=${currentLocation}`;
+let forecastURL = `http://api.weatherapi.com/v1/forecast.json?key=f565f05ebecc44d0b0d25131232309&q=${currentLocation}&days=3`;
 
 function changeLocation(newLocation) {
   currentLocation = newLocation;
@@ -88,6 +88,7 @@ async function getForecastWeatherData() {
       throw new Error(`${weatherDataResponse.status}`);
     }
     const weatherData = await weatherDataResponse.json();
+    console.log(weatherData);
     return weatherData;
   } catch (err) {
     console.error(err);
