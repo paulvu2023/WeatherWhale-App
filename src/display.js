@@ -4,15 +4,15 @@ function displayForecastWeatherData(processedForecastData, isFahrenheitActive) {
   const dailyHigh = document.querySelector('.dailyHigh span');
   const dailyLow = document.querySelector('.dailyLow span');
 
-  uv.textContent = `${processedForecastData.uv}`;
-  dailyChanceOfRain.textContent = `${processedForecastData.dailyChanceOfRain} %`;
+  uv.textContent = `${processedForecastData.uv1}`;
+  dailyChanceOfRain.textContent = `${processedForecastData.dailyChanceOfRain1} %`;
 
   if (!isFahrenheitActive) {
-    dailyHigh.textContent = `${processedForecastData.dailyHighestTempC} °C`;
-    dailyLow.textContent = `${processedForecastData.dailyLowestTempC} °C`;
+    dailyHigh.textContent = `${processedForecastData.dailyHighestTempC1} °C`;
+    dailyLow.textContent = `${processedForecastData.dailyLowestTempC1} °C`;
   } else {
-    dailyHigh.textContent = `${processedForecastData.dailyHighestTempF} °F`;
-    dailyLow.textContent = `${processedForecastData.dailyLowestTempF} °F`;
+    dailyHigh.textContent = `${processedForecastData.dailyHighestTempF1} °F`;
+    dailyLow.textContent = `${processedForecastData.dailyLowestTempF1} °F`;
   }
 }
 

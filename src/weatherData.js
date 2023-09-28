@@ -98,13 +98,29 @@ async function getForecastWeatherData() {
 
 function processForecastWeatherData(weatherData) {
   let processedForecastData = {
-    dailyChanceOfRain:
+    dailyChanceOfRain1:
       weatherData.forecast.forecastday[0].day.daily_chance_of_rain,
-    dailyHighestTempC: weatherData.forecast.forecastday[0].day.maxtemp_c,
-    dailyHighestTempF: weatherData.forecast.forecastday[0].day.maxtemp_f,
-    dailyLowestTempC: weatherData.forecast.forecastday[0].day.mintemp_c,
-    dailyLowestTempF: weatherData.forecast.forecastday[0].day.mintemp_f,
-    uv: weatherData.forecast.forecastday[0].day.uv,
+    dailyHighestTempC1: weatherData.forecast.forecastday[0].day.maxtemp_c,
+    dailyHighestTempF1: weatherData.forecast.forecastday[0].day.maxtemp_f,
+    dailyLowestTempC1: weatherData.forecast.forecastday[0].day.mintemp_c,
+    dailyLowestTempF1: weatherData.forecast.forecastday[0].day.mintemp_f,
+    uv1: weatherData.forecast.forecastday[0].day.uv,
+
+    dailyChanceOfRain2:
+      weatherData.forecast.forecastday[1].day.daily_chance_of_rain,
+    dailyHighestTempC2: weatherData.forecast.forecastday[1].day.maxtemp_c,
+    dailyHighestTempF2: weatherData.forecast.forecastday[1].day.maxtemp_f,
+    dailyLowestTempC2: weatherData.forecast.forecastday[1].day.mintemp_c,
+    dailyLowestTempF2: weatherData.forecast.forecastday[1].day.mintemp_f,
+    uv2: weatherData.forecast.forecastday[1].day.uv,
+
+    dailyChanceOfRain2:
+      weatherData.forecast.forecastday[2].day.daily_chance_of_rain,
+    dailyHighestTempC2: weatherData.forecast.forecastday[2].day.maxtemp_c,
+    dailyHighestTempF2: weatherData.forecast.forecastday[2].day.maxtemp_f,
+    dailyLowestTempC2: weatherData.forecast.forecastday[2].day.mintemp_c,
+    dailyLowestTempF2: weatherData.forecast.forecastday[2].day.mintemp_f,
+    uv2: weatherData.forecast.forecastday[2].day.uv,
   };
   console.log(processedForecastData);
   return processedForecastData;
