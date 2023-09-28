@@ -17,7 +17,30 @@ function displayDailyForecastWeatherData(
   const day3High = document.querySelector('day3 dayHigh');
   const day3Low = document.querySelector('day3 dayLow');
 
-  day1Icon.textContent = proce;
+  day1Icon.innerHTML = getConditionIcon(processedForecastData.dailyCondition1);
+  day1Day.textContent = ''; // calculate weekday based on date
+
+  day2Icon.innerHTML = getConditionIcon(processedForecastData.dailyCondition2);
+  day2Day.textContent = ''; // calculate weekday based on date
+
+  day3Icon.innerHTML = getConditionIcon(processedForecastData.dailyCondition3);
+  day3Day.textContent = ''; // calculate weekday based on date
+
+  if (!isFahrenheitActive) {
+    day1High.textContent = `${processedForecastData.dailyHighestTempC1} °C`;
+    day2High.textContent = `${processedForecastData.dailyHighestTempC2} °C`;
+    day3High.textContent = `${processedForecastData.dailyHighestTempC3} °C`;
+    day1Low.textContent = `${processedForecastData.dailyLowestTempC1} °C`;
+    day2Low.textContent = `${processedForecastData.dailyLowestTempC2} °C`;
+    day3Low.textContent = `${processedForecastData.dailyLowestTempC3} °C`;
+  } else {
+    day1High.textContent = `${processedForecastData.dailyHighestTempF1} °F`;
+    day2High.textContent = `${processedForecastData.dailyHighestTempF2} °F`;
+    day3High.textContent = `${processedForecastData.dailyHighestTempF3} °F`;
+    day1Low.textContent = `${processedForecastData.dailyLowestTempF1} °F`;
+    day2Low.textContent = `${processedForecastData.dailyLowestTempF2} °F`;
+    day3Low.textContent = `${processedForecastData.dailyLowestTempF3} °F`;
+  }
 }
 
 function displayForecastWeatherData(processedForecastData, isFahrenheitActive) {
