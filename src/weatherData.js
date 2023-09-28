@@ -105,7 +105,7 @@ function processForecastWeatherData(weatherData) {
     dailyLowestTempC1: weatherData.forecast.forecastday[0].day.mintemp_c,
     dailyLowestTempF1: weatherData.forecast.forecastday[0].day.mintemp_f,
     uv1: weatherData.forecast.forecastday[0].day.uv,
-    dailyCondition2: weatherData.forecast.forecastday[1].day.condition.text,
+    dailyCondition1: weatherData.forecast.forecastday[0].day.condition.text,
 
     dailyHighestTempC2: weatherData.forecast.forecastday[1].day.maxtemp_c,
     dailyHighestTempF2: weatherData.forecast.forecastday[1].day.maxtemp_f,
@@ -117,7 +117,7 @@ function processForecastWeatherData(weatherData) {
     dailyHighestTempF3: weatherData.forecast.forecastday[2].day.maxtemp_f,
     dailyLowestTempC3: weatherData.forecast.forecastday[2].day.mintemp_c,
     dailyLowestTempF3: weatherData.forecast.forecastday[2].day.mintemp_f,
-    dailyCondition2: weatherData.forecast.forecastday[1].day.condition.text,
+    dailyCondition3: weatherData.forecast.forecastday[2].day.condition.text,
   };
   console.log(processedForecastData);
   return processedForecastData;

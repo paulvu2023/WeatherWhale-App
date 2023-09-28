@@ -1,7 +1,24 @@
-// function displayDailyForecastWeatherData(
-//   processForecastWeatherData,
-//   isFahrenheitActive,
-// ) {}
+function displayDailyForecastWeatherData(
+  processedForecastData,
+  isFahrenheitActive,
+) {
+  const day1Icon = document.querySelector('.day1 icon-container');
+  const day1Day = document.querySelector('day1 day');
+  const day1High = document.querySelector('day1 dayHigh');
+  const day1Low = document.querySelector('day1 dayLow');
+
+  const day2Icon = document.querySelector('.day2 icon-container');
+  const day2Day = document.querySelector('day2 day');
+  const day2High = document.querySelector('day2 dayHigh');
+  const day2Low = document.querySelector('day2 dayLow');
+
+  const day3Icon = document.querySelector('.day3 icon-container');
+  const day3Day = document.querySelector('day3 day');
+  const day3High = document.querySelector('day3 dayHigh');
+  const day3Low = document.querySelector('day3 dayLow');
+
+  day1Icon.textContent = proce;
+}
 
 function displayForecastWeatherData(processedForecastData, isFahrenheitActive) {
   const uv = document.querySelector('.uv span');
