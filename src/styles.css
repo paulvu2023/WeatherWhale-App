@@ -175,7 +175,29 @@ nav div div {
 
 /* Styling for bottom half */
 .bottom {
+  display: flex;
   height: 35%;
+  justify-content: space-evenly;
+}
+
+.forecastDay {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  gap: 20px;
+}
+
+.day {
+  font-size: 20px;
+}
+
+.dayHigh {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.dayConditionIcon {
+  font-size: 50px;
 }
 
 /* Searchbar Styling */

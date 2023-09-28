@@ -1,3 +1,8 @@
+// function displayDailyForecastWeatherData(
+//   processForecastWeatherData,
+//   isFahrenheitActive,
+// ) {}
+
 function displayForecastWeatherData(processedForecastData, isFahrenheitActive) {
   const uv = document.querySelector('.uv span');
   const dailyChanceOfRain = document.querySelector('.dailyChanceOfRain span');
