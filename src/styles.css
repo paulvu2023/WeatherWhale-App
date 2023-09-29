@@ -306,8 +306,33 @@ nav div div {
 }
 
 /* Styling for hourly forecast */
+.hourlyForecast {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .hidden {
   display: none;
+}
+
+.hour {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.hour-number {
+  font-size: 20px;
+}
+
+.hour-temperature {
+  font-weight: 800;
+  font-size: calc(20px + .25vw);
+}
+
+.hour-icon-container .condition-icon {
+  font-size: 40px;
 }
 
 /* Searchbar Styling */

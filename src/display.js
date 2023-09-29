@@ -19,13 +19,14 @@ function displayNext8Hours(processedForecastData, isFahrenheitActive) {
     thisHour.querySelector('.hour-icon-container').innerHTML = getConditionIcon(
       hourlyForecast[i].condition.text,
     );
-    thisHour.querySelector('.hour').textContent = convertHourTo12HourFormat(i);
+    thisHour.querySelector('.hour-number').textContent =
+      convertHourTo12HourFormat(i);
     if (!isFahrenheitActive) {
-      document.querySelector(
+      thisHour.querySelector(
         '.hour-temperature',
       ).textContent = `${hourlyForecast[i].temp_c} °C`;
     } else {
-      document.querySelector(
+      thisHour.querySelector(
         '.hour-temperature',
       ).textContent = `${hourlyForecast[i].temp_f} °F`;
     }
