@@ -26,7 +26,7 @@ function displayDailyForecastWeatherData(
   day2Day.textContent = format(parseISO(processedForecastData.date2), 'EEEE'); // calculate weekday based on date
 
   day3Icon.innerHTML = getConditionIcon(processedForecastData.dailyCondition3);
-  day3Day.textContent = format(parseISO(processedForecastData.date2), 'EEEE'); // calculate weekday based on date
+  day3Day.textContent = format(parseISO(processedForecastData.date3), 'EEEE'); // calculate weekday based on date
 
   if (!isFahrenheitActive) {
     day1High.textContent = `${processedForecastData.dailyHighestTempC1} °C`;
