@@ -1,4 +1,43 @@
-import { format, parseISO } from 'date-fns';
+import { format, parseISO, parse, getHours } from 'date-fns';
+
+function displayNext8Hours(processedForecastData, isFahrenheitActive) {
+  const dateString = document.querySelector('.localTime').textContent;
+  const parsedDate = parse(
+    dateString,
+    'EEEE, MMMM do, yyyy | hh:mm a',
+    new Date(),
+  );
+  const hours = getHours(parsedDate);
+  const hourlyForecast = processedForecastData.hourlyForecast1.concat(
+    processedForecastData.hourlyForecast1,
+  );
+  const stoppingPoint = hours + 8;
+  let hoursCount = 1;
+
+  for (let i = hours; i < stoppingPoint; i++) {
+    const thisHour = document.querySelector(`.hour${hoursCount}`);
+    thisHour.querySelector('.hour-icon-container').innerHTML = getConditionIcon(
+      hourlyForecast[i].condition.text,
+    );
+    thisHour.querySelector('.hour').textContent = convertHourTo12HourFormat(i);
+    if (!isFahrenheitActive) {
+      document.querySelector(
+        '.hour-temperature',
+      ).textContent = `${hourlyForecast[i].temp_c} °C`;
+    } else {
+      document.querySelector(
+        '.hour-temperature',
+      ).textContent = `${hourlyForecast[i].temp_f} °F`;
+    }
+    hoursCount += 1;
+  }
+}
+
+function convertHourTo12HourFormat(hour24) {
+  const hour = hour24 % 12 || 12;
+  const period = hour24 >= 12 ? 'PM' : 'AM';
+  return `${hour} ${period}`;
+}
 
 function displayDailyForecastWeatherData(
   processedForecastData,
@@ -62,6 +101,7 @@ function displayForecastWeatherData(processedForecastData, isFahrenheitActive) {
     dailyLow.textContent = `${processedForecastData.dailyLowestTempF1} °F`;
   }
   displayDailyForecastWeatherData(processedForecastData, isFahrenheitActive);
+  displayNext8Hours(processedForecastData, isFahrenheitActive);
 }
 
 function displayCurrentWeatherData(processedCurrentData, isFahrenheitActive) {
