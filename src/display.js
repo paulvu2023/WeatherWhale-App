@@ -1,6 +1,6 @@
 import { format, parseISO, parse, getHours } from 'date-fns';
 
-function displayNext8Hours(processedForecastData, isFahrenheitActive) {
+function displayHourlyForecast(processedForecastData, isFahrenheitActive) {
   const dateString = document.querySelector('.localTime').textContent;
   const parsedDate = parse(
     dateString,
@@ -12,7 +12,7 @@ function displayNext8Hours(processedForecastData, isFahrenheitActive) {
     ...processedForecastData.hourlyForecast1,
     ...processedForecastData.hourlyForecast1,
   ];
-  const stoppingPoint = currentHour + 8;
+  const stoppingPoint = currentHour + 24;
 
   for (
     let i = currentHour, hoursCount = 1;
@@ -100,7 +100,7 @@ function displayForecastWeatherData(processedForecastData, isFahrenheitActive) {
     dailyLow.textContent = `${processedForecastData.dailyLowestTempF1} °F`;
   }
   displayDailyForecastWeatherData(processedForecastData, isFahrenheitActive);
-  displayNext8Hours(processedForecastData, isFahrenheitActive);
+  displayHourlyForecast(processedForecastData, isFahrenheitActive);
 }
 
 function displayCurrentWeatherData(processedCurrentData, isFahrenheitActive) {
