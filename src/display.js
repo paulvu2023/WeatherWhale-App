@@ -67,16 +67,20 @@ function displayForecastWeatherData(processedForecastData, isFahrenheitActive) {
 function displayCurrentWeatherData(processedCurrentData, isFahrenheitActive) {
   const city = document.querySelector('.city');
   const country = document.querySelector('.country');
-  const localTime = document.querySelector('.localTime');
+  const localTimeHTML = document.querySelector('.localTime');
   const humidity = document.querySelector('.humidity span');
   const wind = document.querySelector('.wind span');
   const condition = document.querySelector('.condition');
   const conditionIcon = document.querySelector('.condition-icon-div');
   const temperature = document.querySelector('.temperature');
+  const localTime = processedCurrentData.localTime.split(' ');
 
   city.textContent = `${processedCurrentData.city},`;
   country.textContent = processedCurrentData.country;
-  localTime.textContent = processedCurrentData.localTime;
+  localTimeHTML.textContent = `${format(
+    parseISO(localTime[0]),
+    'PPPPP',
+  )} | ${convertTo12HourFormat(localTime[1])}`;
   condition.textContent = processedCurrentData.condition;
   humidity.textContent = `${processedCurrentData.humidity} %`;
 
@@ -93,6 +97,13 @@ function displayCurrentWeatherData(processedCurrentData, isFahrenheitActive) {
   } else {
     conditionIcon.innerHTML = getConditionIcon(processedCurrentData.condition);
   }
+}
+
+function convertTo12HourFormat(time24) {
+  const [hours, minutes] = time24.split(':');
+  const period = hours >= 12 ? 'PM' : 'AM';
+  const hour12 = hours % 12 || 12;
+  return `${hour12}:${minutes} ${period}`;
 }
 
 //Returns condition icon if found, otherwise returns false
