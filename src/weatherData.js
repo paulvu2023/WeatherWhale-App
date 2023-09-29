@@ -122,7 +122,6 @@ function processForecastWeatherData(weatherData) {
     dailyCondition3: weatherData.forecast.forecastday[2].day.condition.text,
     date3: weatherData.forecast.forecastday[2].date,
   };
-  console.log(processedForecastData);
   return processedForecastData;
 }
 
