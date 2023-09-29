@@ -10,7 +10,7 @@ let forecastURL = `http://api.weatherapi.com/v1/forecast.json?key=f565f05ebecc44
 function changeLocation(newLocation) {
   currentLocation = newLocation;
   currentURL = `https://api.weatherapi.com/v1/current.json?key=f565f05ebecc44d0b0d25131232309&q=${newLocation}`;
-  forecastURL = `http://api.weatherapi.com/v1/forecast.json?key=f565f05ebecc44d0b0d25131232309&q=${newLocation}`;
+  forecastURL = `http://api.weatherapi.com/v1/forecast.json?key=f565f05ebecc44d0b0d25131232309&q=${newLocation}&days=3`;
 }
 
 function isFahrenheitActive() {
