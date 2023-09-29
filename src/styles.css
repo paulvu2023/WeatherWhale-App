@@ -27,6 +27,14 @@ body {
   overflow: hidden;
 }
 
+@media (width <= 1150px) {
+  .top > nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
 /* Styling for top half */
 .top {
   height: 65%;
