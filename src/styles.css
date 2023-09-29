@@ -69,6 +69,28 @@ body {
   }
 }
 
+@media (width <= 415px) {
+  .forecastDay .dayHigh {
+    font-size: 13px;
+  }
+
+  div .button-container button {
+    width: 55px;
+  }
+
+  div * {
+    font-size: 10px;
+  }
+
+  body .top {
+    height: 70%;
+  }
+
+  body .bottom {
+    height: 20%;
+  }
+}
+
 /* Styling for top half */
 .top {
   height: 65%;
