@@ -7,30 +7,28 @@ function displayNext8Hours(processedForecastData, isFahrenheitActive) {
     'EEEE, MMMM do, yyyy | hh:mm a',
     new Date(),
   );
-  const hours = getHours(parsedDate);
-  const hourlyForecast = processedForecastData.hourlyForecast1.concat(
-    processedForecastData.hourlyForecast1,
-  );
-  const stoppingPoint = hours + 8;
-  let hoursCount = 1;
+  const currentHour = getHours(parsedDate);
+  const hourlyForecast = [
+    ...processedForecastData.hourlyForecast1,
+    ...processedForecastData.hourlyForecast1,
+  ];
+  const stoppingPoint = currentHour + 8;
 
-  for (let i = hours; i < stoppingPoint; i++) {
+  for (
+    let i = currentHour, hoursCount = 1;
+    i < stoppingPoint;
+    i++, hoursCount++
+  ) {
     const thisHour = document.querySelector(`.hour${hoursCount}`);
+    const { condition, temp_c, temp_f } = hourlyForecast[i];
+
     thisHour.querySelector('.hour-icon-container').innerHTML = getConditionIcon(
-      hourlyForecast[i].condition.text,
+      condition.text,
     );
     thisHour.querySelector('.hour-number').textContent =
       convertHourTo12HourFormat(i);
-    if (!isFahrenheitActive) {
-      thisHour.querySelector(
-        '.hour-temperature',
-      ).textContent = `${hourlyForecast[i].temp_c} °C`;
-    } else {
-      thisHour.querySelector(
-        '.hour-temperature',
-      ).textContent = `${hourlyForecast[i].temp_f} °F`;
-    }
-    hoursCount += 1;
+    const temperature = isFahrenheitActive ? `${temp_f} °F` : `${temp_c} °C`;
+    thisHour.querySelector('.hour-temperature').textContent = temperature;
   }
 }
 
