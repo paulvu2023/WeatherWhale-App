@@ -38,7 +38,9 @@ dailyAndHourlyButtons.forEach((button) => {
     button.classList.add('active');
     if (button.classList.contains('dailyButton')) {
       document.querySelector('.dailyforecast').classList.remove('hidden');
+      document.querySelector('.hourlyForecast').classList.add('hidden');
     } else {
+      document.querySelector('.hourlyForecast').classList.remove('hidden');
       document.querySelector('.dailyforecast').classList.add('hidden');
     }
   });
