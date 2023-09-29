@@ -51,6 +51,24 @@ body {
   }
 }
 
+@media (width <= 620px) {
+  div .localTime {
+    font-size: 4vw;
+  }
+
+  div .temperature {
+    font-size: 6vw;
+  }
+
+  div .condition {
+    font-size: 6vw;
+  }
+
+  .container div span {
+    font-size: calc(12px + 1vw);
+  }
+}
+
 /* Styling for top half */
 .top {
   height: 65%;
