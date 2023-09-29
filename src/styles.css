@@ -74,6 +74,18 @@ body {
     font-size: 13px;
   }
 
+  .middle .condition-container {
+    gap: 3px;
+  }
+
+  .middle .temperature {
+    font-size: 17px;
+  }
+
+  .middle .condition {
+    font-size: 18px;
+  }
+
   div .button-container button {
     width: 55px;
   }
