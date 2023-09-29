@@ -28,10 +28,26 @@ body {
 }
 
 @media (width <= 1150px) {
-  .top > nav {
+  .top nav {
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+}
+
+@media (width <= 875px) {
+  div .city, div .country {
+    font-size: 4vw;
+  }
+}
+
+@media (width <= 720px) {
+  div .condition-icon {
+    font-size: 6vw;
+  }
+
+  div .day {
+    font-size: 15px;
   }
 }
 
