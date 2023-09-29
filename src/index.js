@@ -7,6 +7,11 @@ import {
 
 const locationForm = document.querySelector('form.searchBar');
 const temperatureButtons = document.querySelectorAll('.navbuttons button');
+const navButtons = document.querySelector('.navbuttons');
+const buttonContainer = document.querySelector('.button-container');
+const dailyAndHourlyButtons = document.querySelectorAll(
+  '.button-container button',
+);
 
 locationForm.addEventListener('submit', (event) => {
   const searchQuery = document.getElementById('searchQueryInput');
@@ -20,10 +25,17 @@ locationForm.addEventListener('submit', (event) => {
 
 temperatureButtons.forEach((temperatureButton) => {
   temperatureButton.addEventListener('click', () => {
-    document.querySelector('.active').classList.remove('active');
+    navButtons.querySelector('.active').classList.remove('active');
     temperatureButton.classList.add('active');
     handleCurrentWeatherData();
     handleForecastWeatherData();
+  });
+});
+
+dailyAndHourlyButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    buttonContainer.querySelector('.active').classList.remove('active');
+    button.classList.add('active');
   });
 });
 
