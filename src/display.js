@@ -1,3 +1,5 @@
+import { format, parseISO } from 'date-fns';
+
 function displayDailyForecastWeatherData(
   processedForecastData,
   isFahrenheitActive,
@@ -18,13 +20,13 @@ function displayDailyForecastWeatherData(
   const day3Low = document.querySelector('.day3 .dayLow');
 
   day1Icon.innerHTML = getConditionIcon(processedForecastData.dailyCondition1);
-  day1Day.textContent = ''; // calculate weekday based on date
+  day1Day.textContent = format(parseISO(processedForecastData.date1), 'EEEE');
 
   day2Icon.innerHTML = getConditionIcon(processedForecastData.dailyCondition2);
-  day2Day.textContent = ''; // calculate weekday based on date
+  day2Day.textContent = format(parseISO(processedForecastData.date2), 'EEEE'); // calculate weekday based on date
 
   day3Icon.innerHTML = getConditionIcon(processedForecastData.dailyCondition3);
-  day3Day.textContent = ''; // calculate weekday based on date
+  day3Day.textContent = format(parseISO(processedForecastData.date2), 'EEEE'); // calculate weekday based on date
 
   if (!isFahrenheitActive) {
     day1High.textContent = `${processedForecastData.dailyHighestTempC1} °C`;
