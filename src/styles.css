@@ -61,7 +61,6 @@ nav div div {
 .navbuttons {
   justify-content: end;
   gap: 10px;
-
 }
 
 .navbuttons button {
@@ -175,8 +174,38 @@ nav div div {
 
 /* Styling for bottom half */
 .bottom {
-  display: flex;
   height: 35%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.button-container button {
+  width: 80px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  font-weight: 800;
+  font-size: 15px;
+  color: white;
+  transition: border 0.3s ease-in-out;
+}
+
+.button-container button:hover {
+  border: 2px solid white;
+}
+
+.button-container button.active {
+  border: 2px solid white;
+}
+
+.dailyforecast {
+  display: flex;
   justify-content: space-evenly;
 }
 
