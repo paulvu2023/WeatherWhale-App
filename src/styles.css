@@ -305,6 +305,11 @@ nav div div {
   font-size: 50px;
 }
 
+/* Styling for hourly forecast */
+.hidden {
+  display: none;
+}
+
 /* Searchbar Styling */
 .searchBar {
   display: block;

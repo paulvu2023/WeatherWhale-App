@@ -36,6 +36,11 @@ dailyAndHourlyButtons.forEach((button) => {
   button.addEventListener('click', () => {
     buttonContainer.querySelector('.active').classList.remove('active');
     button.classList.add('active');
+    if (button.classList.contains('dailyButton')) {
+      document.querySelector('.dailyforecast').classList.remove('hidden');
+    } else {
+      document.querySelector('.dailyforecast').classList.add('hidden');
+    }
   });
 });
 
