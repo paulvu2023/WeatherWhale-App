@@ -77,7 +77,6 @@ function processCurrentWeatherData(weatherData) {
     windMPH: weatherData.current.wind_mph,
     windKPH: weatherData.current.wind_kph,
   };
-  console.log(processedCurrentData);
   return processedCurrentData;
 }
 
@@ -88,7 +87,6 @@ async function getForecastWeatherData() {
       throw new Error(`${weatherDataResponse.status}`);
     }
     const weatherData = await weatherDataResponse.json();
-    console.log(weatherData);
     return weatherData;
   } catch (err) {
     console.error(err);
@@ -107,6 +105,7 @@ function processForecastWeatherData(weatherData) {
     uv1: weatherData.forecast.forecastday[0].day.uv,
     dailyCondition1: weatherData.forecast.forecastday[0].day.condition.text,
     date1: weatherData.forecast.forecastday[0].date,
+    hourlyForecast1: weatherData.forecast.forecastday[0].hour,
 
     dailyHighestTempC2: weatherData.forecast.forecastday[1].day.maxtemp_c,
     dailyHighestTempF2: weatherData.forecast.forecastday[1].day.maxtemp_f,
@@ -114,6 +113,7 @@ function processForecastWeatherData(weatherData) {
     dailyLowestTempF2: weatherData.forecast.forecastday[1].day.mintemp_f,
     dailyCondition2: weatherData.forecast.forecastday[1].day.condition.text,
     date2: weatherData.forecast.forecastday[1].date,
+    hourlyForecast2: weatherData.forecast.forecastday[1].hour,
 
     dailyHighestTempC3: weatherData.forecast.forecastday[2].day.maxtemp_c,
     dailyHighestTempF3: weatherData.forecast.forecastday[2].day.maxtemp_f,
