@@ -2,6 +2,10 @@
 
 Welcome to WeatherWhale, your go-to weather companion for up-to-date weather information and forecasts everywhere. WeatherWhale helps you stay informed about current weather conditions, future forecasts, and more, all in one easy-to-use application.
 
+[Live App](https://paulvu2023.github.io/WeatherWhale-App/)
+
+![weatherwhalescreenshot](https://github.com/paulvu2023/WeatherWhale-App/assets/118864214/2d86172d-87b2-4811-9669-0cd38aaf437c)
+
 ## Features
 
 With WeatherWhale, you can:
@@ -18,10 +22,15 @@ With WeatherWhale, you can:
 
 - **Unit Conversion**: Customize your experience by switching between Fahrenheit and Celsius for temperature, and between kilometers and miles for distance.
 
+## How It's Made:
 
-[Live App](https://paulvu2023.github.io/WeatherWhale-App/)
+**Tech used:** HTML, CSS, JavaScript, WeatherAPI
 
-![weatherwhalescreenshot](https://github.com/paulvu2023/WeatherWhale-App/assets/118864214/2d86172d-87b2-4811-9669-0cd38aaf437c)
+This web application works by allowing the user to enter a location, and fetching information from the WeatherAPI based on the location. It repackages and beautifies the information with HTML and CSS. JavaScript is used for everything behind the scenes.
+
+# Improvements:
+
+WeatherWhale could be improved by implementing a 14 day forecast. This would require a 35 dollar per month subscription to WeatherAPI, that's why I decided to stick with the free 3 day forecast.
 
 ## Contact Information
 
