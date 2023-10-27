@@ -32,6 +32,10 @@ This web application works by allowing the user to enter a location, and fetchin
 
 WeatherWhale could be improved by implementing a 14 day forecast. This would require a 35 dollar per month subscription to WeatherAPI, that's why I decided to stick with the free 3 day forecast.
 
+# Lessons Learned:
+
+This was my first time using an API, so I learned a lot about using the Fetch API, JSON, and asynchronous programming. Asynchronous programming was particularly difficult for me to understand at first because it seemed so counterintuitive. Instead of the normal top to bottom order, the order seemed like it could go up, down, left, right, and center. However, I've gotten the hang of asynchronous programming and it's no longer a huge puzzle.
+
 ## Contact Information
 
 If you have any questions or feedback, please don't hesitate to reach out:
