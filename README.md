@@ -1,6 +1,6 @@
 # WeatherWhale-App
 
-Welcome to WeatherWhale, your go-to weather companion for up-to-date weather information and forecasts everywhere. WeatherWhale helps you stay informed about current weather conditions, future forecasts, and more, all in one easy-to-use application.
+WeatherWhale helps you stay informed about current weather conditions, future forecasts, and more, all in one easy-to-use application.
 
 [Live App](https://paulvu2023.github.io/WeatherWhale-App/)
 
