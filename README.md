@@ -8,8 +8,6 @@ WeatherWhale helps you stay informed about current weather conditions, future fo
 
 ## Features
 
-With WeatherWhale, you can:
-
 - **Check Current Weather**: Get real-time updates on the current weather conditions for any location worldwide.
 
 - **2-Day Forecast**: Plan ahead with a 2-day weather forecast to ensure you're prepared for changes in weather.
